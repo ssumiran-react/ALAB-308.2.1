@@ -62,7 +62,6 @@ If the space remained circular, what would be the radius of this expanded garden
 console.log ("\n\nPart 2:")
 numPlant = 100;
 let area100Plants = (numPlant * eachPlantArea) ;
-//let areaPlantsWeek1 = area100Plants * 2; // AREA / (numPlant * 2 * eachPlantArea) ;
 
 console.log("Number "+numPlant+ " of plants occupied area: "
     + area100Plants );
@@ -82,17 +81,27 @@ and log an appropriate message.
 */
 console.log ("\n\nPart 3:")
 numPlant = 100;
-area100Plants = AREA/(numPlant * eachPlantArea) ;
-//let areaPlantsWeek1 = area100Plants * 2; // AREA / (numPlant * 2 * eachPlantArea) ;
+area100Plants = (numPlant * eachPlantArea) ;
 
-console.log("Number "+numPlant+ " of plants occupied area: "
-    + area100Plants + " of total area "+AREA);
-   
+try{
+    if (area100Plants < AREA){
+        console.log ("Area " +AREA+" metre is still having spaces for "+numPlant+ " plants. Continue planting.");
+    }else{
+        throw ("Area is not big enough to " + numPlant+" plants.");
+    }
+    }catch (err){
+    console.log("ERRORS: "+err);
+}
+numPlant = 100 * 2;
+area100Plants = (numPlant * eachPlantArea) ;
+try{
+    
+    if (area100Plants < AREA){
+        console.log ("Area " +AREA+" metre is still having spaces for "+numPlant + " plants. Continue planting.");
+    }else{
+        throw ("Area is not big enough to " + numPlant +" plants.");
+    }
+}catch (err){
+    console.log("ERRORS: "+err);
+}
 
-console.log("Number "+numPlant+ " of plants occupied area: "
-    + area100Plants );
-
-numPlant = 100 * (2**10);
-area100PlantsWeek10 = numPlant  * eachPlantArea ;
-console.log("Number "+numPlant+ " of plants occupied area for 10 weeks in squere metre: "
-    + area100PlantsWeek10 );  
