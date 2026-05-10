@@ -1,44 +1,73 @@
-console.log("hello");
+
 const PI = 3.1415;
-const radius = 5;
-const plant = 0.8;
-const area = PI * radius * radius;  // 78.5375    -> 0.8
-let plantcount = 20;
+const RADIUS = 5;
+const AREA = PI * RADIUS * RADIUS;  // 78.5375    
 
-//week 0 area0 = 4.9085937500000005
-console.log( area / (plantcount * plant * plant) );
+let eachPlantArea = 0.8 * 0.8;  
+let numPlant = 20;
+let area20PlantsWeek0 = AREA / (numPlant * eachPlantArea) ;
+const AREA_50_PERCENT =  AREA * .5;
+const AREA_80_PERCENT =  AREA * .8;
 
-// week 1  area0 * 2  == ??   >   ()
-/*
+//week 0 area0 = 6.1357
+console.log("Number "+numPlant+ " of plants occupied area: "
+    + area20PlantsWeek0 + " of total area "+AREA);
+   
+let areaPlantsWeek1 = area20PlantsWeek0 * 2; // AREA / (numPlant * 2 * eachPlantArea) ;
 
-if ( 50% of the maximum capacity  )
-  print  Planted
+if (areaPlantsWeek1 < AREA_50_PERCENT){
+    console.log("Number "+ (numPlant * 2) + " of plants occupied area: "
+    + areaPlantsWeek1 + " of total area "+AREA + "; Planted");
+}else if (areaPlantsWeek1 < AREA_80_PERCENT){
+    console.log("Number "+ (numPlant * 2) + " of plants occupied area: "
+    + areaPlantsWeek1 + " of total area "+AREA + "; Monitored");
+}else {
+    console.log("Number "+ (numPlant * 2) + " of plants occupied area: "
+    + areaPlantsWeek1 + " of total area "+AREA + "; Pruned");
+}
 
-else  (  50% and 80%  )
-print  Monitored, 
+let areaPlantsWeek2 = areaPlantsWeek1 * 2;
 
-else  (  greater than 80%  )
-print  Pruned,
+if (areaPlantsWeek2 < AREA_50_PERCENT){
+    console.log("Number "+ (numPlant * 2 * 2) + " of plants occupied area: "
+    + areaPlantsWeek2 + " of total area "+AREA + "; Planted");
+}else if (areaPlantsWeek2 < AREA_80_PERCENT){
+    console.log("Number "+ (numPlant * 2 *2) + " of plants occupied area: "
+    + areaPlantsWeek2 + " of total area "+AREA + "; Monitored");
+}else {
+    console.log("Number "+ (numPlant * 2 * 2) + " of plants occupied area: "
+    + areaPlantsWeek2 + " of total area "+AREA + "; Pruned");
+}
 
-*/
-// week 2
+let areaPlantsWeek3 = areaPlantsWeek2 * 2;
 
-// week 3
+if (areaPlantsWeek3 < AREA_50_PERCENT){
+    console.log("Number "+ (numPlant * 2 * 2 *2) + " of plants occupied area: "
+    + areaPlantsWeek3 + " of total area "+AREA + "; Planted");
+}else if (areaPlantsWeek2 < AREA_80_PERCENT){
+    console.log("Number "+ (numPlant * 2 *2 *2) + " of plants occupied area: "
+    + areaPlantsWeek3 + " of total area "+AREA + "; Monitored");
+}else {
+    console.log("Number "+ (numPlant * 2 * 2 *2) + " of plants occupied area: "
+    + areaPlantsWeek3 + " of total area "+AREA + "; Pruned");
+}
 
+/* Part 2: Thinking Bigger
+The conservation area in which the garden is located has multiple other gardens. 
+Using the logic you have already created, determine:
+The amount of additional space that would be required if the scientists were to 
+start with 100 plants, and did not prune them for 10 weeks.
+If the space remained circular, what would be the radius of this expanded garden?*/
+console.log ("\n\nPart 2:")
+numPlant = 100;
+let area100Plants = (numPlant * eachPlantArea) ;
+//let areaPlantsWeek1 = area100Plants * 2; // AREA / (numPlant * 2 * eachPlantArea) ;
 
-/*
-Implement control flow to make decisions on whether the plants should be:
-Pruned, to stop them from exceeding the capacity of the garden.
-This condition should be met if the plant count after the given number of 
-weeks is greater than 80% of the maximum capacity of the garden.
+console.log("Number "+numPlant+ " of plants occupied area: "
+    + area100Plants );
 
-Monitored, if they are growing at an acceptable rate.
-This condition should be met if the plant count is between 50% and 80% 
-of the maximum capacity of the garden after the given number of weeks.
+numPlant = 100 * (2**10);
+let area100PlantsWeek10 = numPlant  * eachPlantArea ;
+console.log("Number "+numPlant+ " of plants occupied area for 10 weeks in squere metre: "
+    + area100PlantsWeek10 );    
 
-Planted, if there is room to plant more plants.
-This condition should be met if the plant count after the given number 
-of weeks is less than 50% of the maximum capacity of the garden.
-
-Within your submission, include the results for 1, 2, and 3 weeks of growth as inputs.
-*/
