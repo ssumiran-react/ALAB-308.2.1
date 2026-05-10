@@ -11,14 +11,15 @@ const AREA_80_PERCENT =  AREA * .8;
 
 //week 0 area0 = 6.1357
 console.log("Number "+numPlant+ " of plants occupied area: "
-    + area20PlantsWeek0 + " and total area "+AREA);
+    + area20PlantsWeek0 + " and total area "+AREA 
+    +"\n50 of area: " + AREA_50_PERCENT+"\n80 of area: " + AREA_80_PERCENT);
    
 let areaPlantsWeek1 = area20PlantsWeek0 * 2; //  (numPlant * 2 * eachPlantArea) ;
 
 if (areaPlantsWeek1 < AREA_50_PERCENT){
     console.log("Number "+ (numPlant * 2) + " of plants occupied area: "
     + areaPlantsWeek1 + " of total area "+AREA + "; Planted");
-}else if (areaPlantsWeek1 < AREA_80_PERCENT){
+}else if (areaPlantsWeek1 > AREA_50_PERCENT && areaPlantsWeek1 < AREA_80_PERCENT){
     console.log("Number "+ (numPlant * 2) + " of plants occupied area: "
     + areaPlantsWeek1 + " of total area "+AREA + "; Monitored");
 }else {
@@ -31,7 +32,7 @@ let areaPlantsWeek2 = areaPlantsWeek1 * 2;
 if (areaPlantsWeek2 < AREA_50_PERCENT){
     console.log("Number "+ (numPlant * 2 * 2) + " of plants occupied area: "
     + areaPlantsWeek2 + " of total area "+AREA + "; Planted");
-}else if (areaPlantsWeek2 < AREA_80_PERCENT){
+}else if (areaPlantsWeek2 > AREA_50_PERCENT && areaPlantsWeek2 < AREA_80_PERCENT){
     console.log("Number "+ (numPlant * 2 *2) + " of plants occupied area: "
     + areaPlantsWeek2 + " of total area "+AREA + "; Monitored");
 }else {
@@ -44,7 +45,7 @@ let areaPlantsWeek3 = areaPlantsWeek2 * 2;
 if (areaPlantsWeek3 < AREA_50_PERCENT){
     console.log("Number "+ (numPlant * 2 * 2 *2) + " of plants occupied area: "
     + areaPlantsWeek3 + " of total area "+AREA + "; Planted");
-}else if (areaPlantsWeek2 < AREA_80_PERCENT){
+}else if (areaPlantsWeek3 > AREA_50_PERCENT && areaPlantsWeek3 < AREA_80_PERCENT){
     console.log("Number "+ (numPlant * 2 *2 *2) + " of plants occupied area: "
     + areaPlantsWeek3 + " of total area "+AREA + "; Monitored");
 }else {
